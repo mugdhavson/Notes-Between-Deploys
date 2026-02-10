@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes Between Deploys</title>
+
+  <!-- Font choice: clean + modern, close to your style reference -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Fixed header elements appear on every page -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
+
+    <nav class="top-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">All Projects</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page page--home">
+    <section class="panel about" aria-labelledby="about-title">
+      <h2 id="about-title" class="panel-title">About Me</h2>
+
+      <div class="about-inner">
+        <div class="pic-container">
+        <img
+          src="assets/profile-pic.png"
+          alt="Profile photo"
+          loading="lazy"
+        />
+        </div>
+
+        <!-- EDIT ME: Replace with your name -->
+        <p class="kicker">Hello, I’m</p>
+        <h1 class="name">Mugdha Sonawane</h1>
+
+        <!-- EDIT ME: Replace with your role/title -->
+        <p class="role">Software Engineer</p>
+
+        <!-- EDIT ME: Replace with your short bio -->
+        <p class="bio">
+          I build "boring" platforms (reliable, secure, audit-ready) and like writing down the lessons learned between deploys.
+        </p>
+
+        <div class="button-row">
+          <!-- EDIT ME: Replace the # with your GitHub URL -->
+          <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer noopener">
+            GitHub
+          </a>
+
+          <!-- EDIT ME: Replace the # with your LinkedIn URL -->
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel projects" aria-labelledby="projects-title">
+      <div class="panel-header">
+        <h2 id="projects-title" class="panel-title">Highlighted Projects</h2>
+        <a class="small-link" href="projects.html">View all →</a>
+      </div>
+
+      <div class="card-grid">
+        <!-- =========================================================
+          FEATURED PROJECTS (Keep EXACTLY 4 cards here)
+
+          EASY TO MAINTAIN:
+          - Copy a PROJECT CARD block from projects.html
+          - Paste here to feature it
+          - Update the link to the post page you created from project-template.html
+        ========================================================== -->
+
+        <!-- PROJECT CARD START -->
+        <article class="project-card">
+          <a class="card-media card-media--p1" href="project-template.html" aria-label="Continue reading: Observability Notes: Tracing a Slow Query"></a>
+          <div class="card-body">
+            <h3 class="card-title">Observability Notes: Tracing a Slow Query</h3>
+            <p class="card-meta">2026-02-05</p>
+            <p class="card-excerpt clamp-3">
+              A practical walkthrough of narrowing down latency spikes—starting from dashboards, jumping into traces, and finishing with a query-level fix that sticks…
+            </p>
+            <a class="btn btn--sm" href="project-template.html">Continue Reading</a>
+          </div>
+        </article>
+        <!-- PROJECT CARD END -->
+
+        <!-- PROJECT CARD START -->
+        <article class="project-card">
+          <a class="card-media card-media--p2" href="project-template.html" aria-label="Continue reading: Hardening Helm Deployments: The Checklist I Actually Use"></a>
+          <div class="card-body">
+            <h3 class="card-title">Hardening Helm Deployments: The Checklist I Actually Use</h3>
+            <p class="card-meta">2026-01-18</p>
+            <p class="card-excerpt clamp-3">
+              Over time, I’ve refined a short list of “must-haves” before shipping to prod—probes, resources, policies, and the small gotchas that cause big incidents…
+            </p>
+            <a class="btn btn--sm" href="project-template.html">Continue Reading</a>
+          </div>
+        </article>
+        <!-- PROJECT CARD END -->
+
+        <!-- PROJECT CARD START -->
+        <article class="project-card">
+          <a class="card-media card-media--p3" href="project-template.html" aria-label="Continue reading: Building a Tiny Design System with Vanilla CSS"></a>
+          <div class="card-body">
+            <h3 class="card-title">Building a Tiny Design System with Vanilla CSS</h3>
+            <p class="card-meta">2025-12-03</p>
+            <p class="card-excerpt clamp-3">
+              I wanted “consistent UI” without a framework. Here’s the approach: tokens, components, and utility patterns that stay readable and easy to extend…
+            </p>
+            <a class="btn btn--sm" href="project-template.html">Continue Reading</a>
+          </div>
+        </article>
+        <!-- PROJECT CARD END -->
+
+        <!-- PROJECT CARD START -->
+        <article class="project-card">
+          <a class="card-media card-media--p4" href="project-template.html" aria-label="Continue reading: From Local to CI: A Clean Docker Build Pipeline"></a>
+          <div class="card-body">
+            <h3 class="card-title">From Local to CI: A Clean Docker Build Pipeline</h3>
+            <p class="card-meta">2025-10-14</p>
+            <p class="card-excerpt clamp-3">
+              A lightweight pattern to keep Dockerfiles small, reproducible, and friendly to CI. Includes multi-stage builds, caching tips, and “why is this image huge?” fixes…
+            </p>
+            <a class="btn btn--sm" href="project-template.html">Continue Reading</a>
+          </div>
+        </article>
+        <!-- PROJECT CARD END -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> <!-- EDIT ME: Your Name --> Your Name. Built with HTML/CSS/JS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
