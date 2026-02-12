@@ -252,16 +252,17 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   margin: 18px 0 10px;
 }
 
-/* Force a true square so it can be a perfect circle on ALL screens */
 .profile-pic{
-  width: 160px;
-  height: 160px;          /* key: stops pill/oval */
-  aspect-ratio: 1 / 1;    /* extra safety */
-  object-fit: cover;      /* safe even if source isn’t perfectly square */
-  object-position: center;
-  border-radius: 50%;     /* even if your file is “already circle”, this guarantees it */
+  height: 180px;   /* pick the size you want */
+  width: auto;     /* IMPORTANT: preserve aspect ratio */
+  max-width: 70vw; /* prevents overflow on small screens */
   display: block;
+
+  /* remove these because your PNG is already circular */
+  border-radius: 0;
+  object-fit: initial;
 }
+
 
 
 @media (max-width: 900px){
