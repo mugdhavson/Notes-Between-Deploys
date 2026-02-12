@@ -236,6 +236,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   display: grid;
   justify-items: center;
   text-align: center;
+  width: auto;
   gap: 10px;
 }
 
