@@ -233,20 +233,41 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 /* About */
 .about-inner{
   padding: 10px 22px 26px;
-  display: grid;
-  justify-items: center;
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  width: auto;
-  gap: 10px;
+  gap: 12px;
 }
 
-/* ✅ FIXED profile image: consistent on desktop + mobile */
-.section__pic-container {
+/* Just a centering wrapper (no circle, no border, nothing visible) */
+.section__pic-container{
+  width: 100%;
   display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0 10px;
 }
+
+/* Your image is already a circle — we only size + center it */
+.profile-pic{
+  width: 160px;
+  height: 160px;      /* ensures no oval scaling */
+  display: block;
+  object-fit: cover;  /* safe if the file isn’t perfectly square */
+  object-position: center;
+
+  /* Optional safety: uncomment ONLY if your file isn't truly circular */
+  /* border-radius: 999px; */
+}
+
+@media (max-width: 900px){
+  .about-inner{ padding: 10px 16px 22px; }
+}
+
 
 /* Mobile nav breakpoint */
 @media (max-width: 900px){
