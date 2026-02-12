@@ -237,7 +237,6 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   justify-items: center;
   text-align: center;
   gap: 10px;
-  width: 100%;
 }
 
 /* ✅ FIXED profile image: consistent on desktop + mobile */
