@@ -241,7 +241,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 }
 
 /* ✅ FIXED profile image: consistent on desktop + mobile */
-.section__pic-container{
+.section__pic-container {
   display: flex;
   height: 400px;
   width: 400px;
