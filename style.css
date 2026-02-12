@@ -222,6 +222,26 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   gap: 10px;
 }
 
+.avatar-wrap{
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  overflow: hidden;          /* hard clips to circle */
+  display: grid;
+  place-items: center;       /* centers the img box */
+}
+
+.avatar{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;         /* fill circle */
+  object-position: 50% 50%;  /* center the crop */
+}
+
+/* If your face is still left in the crop, nudge it right: */
+/* .avatar{ object-position: 60% 50%; } */
+
 /* Mobile nav breakpoint (prevents overlap) */
 @media (max-width: 900px){
   .nav-toggle{ display: inline-flex; }
