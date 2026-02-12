@@ -222,6 +222,10 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   gap: 10px;
 }
 
+.section-container {
+  display: flex;
+}
+
 .section__pic-container {
   display: flex;
   height: 350px;
