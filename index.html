@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notes Between Deploys</title>
 
-  <!-- Font choice: clean + modern, close to your style reference -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +15,17 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Fixed header elements appear on every page -->
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
 
-    <nav class="top-nav" aria-label="Primary">
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="projects.html">All Projects</a>
     </nav>
@@ -30,33 +36,30 @@
       <h2 id="about-title" class="panel-title">About Me</h2>
 
       <div class="about-inner">
-        <div class="pic-container">
+        <!-- Removed .pic-container (it caused mobile overflow/push-right). -->
         <img
           src="assets/profile-pic.png"
           alt="Profile photo"
           loading="lazy"
+          width="160"
+          height="160"
+          style="width:160px;height:160px;border-radius:999px;object-fit:cover;object-position:center;display:block;"
         />
-        </div>
 
-        <!-- EDIT ME: Replace with your name -->
         <p class="kicker">Hello, I’m</p>
         <h1 class="name">Mugdha Sonawane</h1>
 
-        <!-- EDIT ME: Replace with your role/title -->
         <p class="role">Software Engineer</p>
 
-        <!-- EDIT ME: Replace with your short bio -->
         <p class="bio">
           I build "boring" platforms (reliable, secure, audit-ready) and like writing down the lessons learned between deploys.
         </p>
 
         <div class="button-row">
-          <!-- EDIT ME: Replace the # with your GitHub URL -->
           <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer noopener">
             GitHub
           </a>
 
-          <!-- EDIT ME: Replace the # with your LinkedIn URL -->
           <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">
             LinkedIn
           </a>
@@ -71,15 +74,6 @@
       </div>
 
       <div class="card-grid">
-        <!-- =========================================================
-          FEATURED PROJECTS (Keep EXACTLY 4 cards here)
-
-          EASY TO MAINTAIN:
-          - Copy a PROJECT CARD block from projects.html
-          - Paste here to feature it
-          - Update the link to the post page you created from project-template.html
-        ========================================================== -->
-
         <!-- PROJECT CARD START -->
         <article class="project-card">
           <a class="card-media card-media--p1" href="project-template.html" aria-label="Continue reading: Observability Notes: Tracing a Slow Query"></a>
@@ -140,7 +134,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> <!-- EDIT ME: Your Name --> Your Name. Built with HTML/CSS/JS.</p>
+    <p>© <span id="year"></span> Mugdha Sonawane. Built with HTML/CSS/JS.</p>
   </footer>
 
   <script src="script.js"></script>

@@ -30,7 +30,11 @@
 }
 
 *{ box-sizing: border-box; }
-html, body{ height: 100%; }
+html, body{
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body{
   margin: 0;
   font-family: var(--font);
@@ -57,7 +61,6 @@ body{
 a{ color: inherit; text-decoration: none; }
 a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); border-radius: 10px; }
 
-
 /* Header */
 .site-header{
   position: fixed;
@@ -66,7 +69,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   right: 18px;
 
   display: flex;
-  justify-content: flex-end;  /* keep menu on the right */
+  justify-content: flex-end; /* keep menu on the right */
   align-items: center;
   gap: 12px;
 
@@ -75,10 +78,10 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   min-height: 54px;
 }
 
-.brand, .top-nav{ pointer-events: auto; }
+.brand, .top-nav, .nav-toggle{ pointer-events: auto; }
 
 .brand{
-  position: absolute;      
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -95,20 +98,9 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   box-shadow: var(--shadow-soft);
 
   font-weight: 800;
-  font-size: 25px;         
+  font-size: 25px;
   letter-spacing: 0.3px;
 }
-
-@media (max-width: 520px){
-  .brand{
-    font-size: 16px;
-    max-width: 70%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
 
 .top-nav{
   display: inline-flex;
@@ -132,6 +124,29 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   color: #fff;
 }
 
+/* Hamburger button */
+.nav-toggle{
+  display: none;               /* hidden on desktop */
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--nav-border);
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.nav-toggle span{
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 2px;
+}
+
 /* Page layout */
 .page{
   max-width: var(--max);
@@ -144,6 +159,10 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   grid-template-columns: 1fr 1.1fr;
   gap: 26px;
   align-items: stretch;
+}
+
+.page--home > .panel{
+  min-width: 0;
 }
 
 @media (max-width: 980px){
@@ -203,14 +222,55 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   gap: 10px;
 }
 
-.pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 2;
-  padding-left: 2rem;
+/* Mobile nav breakpoint (prevents overlap) */
+@media (max-width: 900px){
+  .nav-toggle{ display: inline-flex; }
+
+  .brand{
+    font-size: 18px;
+    max-width: calc(100vw - 160px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* dropdown nav */
+  .top-nav{
+    position: fixed;
+    top: 76px;
+    left: 18px;
+    right: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 10px;
+    border-radius: 18px;
+
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+
+    transition: opacity 140ms ease, transform 140ms ease;
+  }
+
+  .top-nav a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .top-nav.is-open{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
+@media (max-width: 420px){
+  .brand{ font-size: 16px; }
+}
 
 .kicker{
   margin: 6px 0 0;
@@ -359,24 +419,16 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 /* Clamp excerpt to show ellipses */
 .clamp-3{
   overflow: hidden;
-
-  /* Preferred (emerging standard) */
   line-clamp: 3;
-
-  /* WebKit/Blink (widely supported) */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-
-  /* Fallback for browsers that ignore line-clamp */
-  max-height: calc(1.5em * 3); 
+  max-height: calc(1.5em * 3);
 }
 
 /* Post template */
 .post{ padding-bottom: 24px; }
-.post-header{
-  padding: 18px 22px 0;
-}
+.post-header{ padding: 18px 22px 0; }
 .post-title{
   margin: 0;
   font-size: clamp(26px, 3.0vw, 40px);
@@ -449,5 +501,3 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   *{ transition: none !important; scroll-behavior: auto !important; }
   .brand:hover, .btn:hover{ transform: none !important; }
 }
-
-

@@ -1,3 +1,4 @@
+<!-- projects.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,11 +15,17 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Fixed header elements appear on every page -->
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
 
-    <nav class="top-nav" aria-label="Primary">
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="projects.html">All Projects</a>
     </nav>
@@ -31,19 +38,7 @@
         <p class="panel-subtitle">Blog-style writeups, sorted from newest to oldest.</p>
       </div>
 
-      <!-- =========================================================
-        NEW PROJECT? Copy one PROJECT CARD block, paste it ABOVE the others,
-        then update:
-          - Title
-          - Date (YYYY-MM-DD)
-          - Excerpt text
-          - Link to the post page you created from project-template.html
-          - (Optional) Media background class or replace the media div with an <img>
-        Keep newest projects at the top.
-      ========================================================== -->
-
       <div class="card-grid card-grid--dense">
-
         <!-- PROJECT CARD START -->
         <article class="project-card">
           <a class="card-media card-media--p1" href="project-template.html" aria-label="Continue reading: Observability Notes: Tracing a Slow Query"></a>
@@ -127,13 +122,12 @@
           </div>
         </article>
         <!-- PROJECT CARD END -->
-
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> <!-- EDIT ME: Your Name --> Your Name.</p>
+    <p>© <span id="year"></span> Mugdha Sonawane.</p>
   </footer>
 
   <script src="script.js"></script>

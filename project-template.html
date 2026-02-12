@@ -1,3 +1,4 @@
+<!-- project-template.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,11 +15,17 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Fixed header elements appear on every page -->
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
 
-    <nav class="top-nav" aria-label="Primary">
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="projects.html">All Projects</a>
     </nav>
@@ -27,26 +34,12 @@
   <main id="main" class="page page--post">
     <article class="panel panel--wide post">
       <header class="post-header">
-        <!-- EDIT ME: Post title -->
         <h1 class="post-title">Project Title</h1>
-
-        <!-- EDIT ME: Publish date -->
         <p class="post-meta">Published <time datetime="2026-02-05">2026-02-05</time></p>
-
-        <!-- OPTIONAL: Replace this hero block with an <img> if you have a screenshot -->
-        <!-- EDIT ME: Hero media (replace background class or swap to <img src="...">) -->
         <div class="post-hero card-media card-media--p1" role="img" aria-label="Project hero image"></div>
       </header>
 
       <div class="post-content">
-        <!-- =========================================================
-          HOW TO USE THIS TEMPLATE (Easy maintenance)
-          1) Copy this file and rename it, e.g. "my-new-project.html"
-          2) Update title/date/hero/excerpt content
-          3) In projects.html and/or index.html, update the "Continue Reading" link
-        ========================================================== -->
-
-        <!-- EDIT ME: Intro paragraph -->
         <p class="lead">
           Short intro that hooks the reader and explains what this project/post is about.
         </p>
@@ -58,7 +51,6 @@
 
         <h2>Highlights</h2>
         <ul>
-          <!-- EDIT ME: Bullet points -->
           <li>Key feature or learning #1</li>
           <li>Key feature or learning #2</li>
           <li>Key feature or learning #3</li>
@@ -85,8 +77,6 @@ function hello() {
 
         <div class="post-cta">
           <a class="btn btn--primary" href="projects.html">Back to All Projects</a>
-
-          <!-- EDIT ME: External links (optional) -->
           <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer noopener">View on GitHub</a>
         </div>
       </div>
@@ -94,7 +84,7 @@ function hello() {
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> <!-- EDIT ME: Your Name --> Your Name.</p>
+    <p>© <span id="year"></span> Mugdha Sonawane.</p>
   </footer>
 
   <script src="script.js"></script>
