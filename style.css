@@ -227,6 +227,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   height: 400px;
   width: 400px;
   margin: auto 0;
+  padding-left: 0.5rem;
 }
 
 /* Mobile nav breakpoint (prevents overlap) */
