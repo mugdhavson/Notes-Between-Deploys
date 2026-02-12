@@ -253,7 +253,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 }
 
 .profile-pic{
-  height: 220px;   /* pick the size you want */
+  height: 180px;   /* pick the size you want */
   width: auto;     /* IMPORTANT: preserve aspect ratio */
   max-width: 70vw; /* prevents overflow on small screens */
   display: block;
