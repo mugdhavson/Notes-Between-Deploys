@@ -243,7 +243,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   gap: 12px;
 }
 
-/* Centering wrapper only (no border/background) */
+/* Centering wrapper */
 .section__pic-container{
   width: 100%;
   display: flex;
@@ -252,15 +252,17 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   margin: 18px 0 10px;
 }
 
+/* Bigger + true centered circle on-screen */
 .profile-pic{
-  height: 180px;   /* pick the size you want */
-  width: auto;     /* IMPORTANT: preserve aspect ratio */
-  max-width: 70vw; /* prevents overflow on small screens */
+  width: 220px;          /* 👈 bigger (change to 200/240 if you want) */
+  height: 220px;         /* 👈 forces a square render box */
   display: block;
+  margin: 0 auto;
 
-  /* remove these because your PNG is already circular */
-  border-radius: 0;
-  object-fit: initial;
+  object-fit: cover;     /* 👈 preserves aspect ratio; crops excess padding */
+  object-position: center;
+
+  border-radius: 50%;    /* 👈 guarantees a perfect circle on screen */
 }
 
 
