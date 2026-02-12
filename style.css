@@ -243,7 +243,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   gap: 12px;
 }
 
-/* Just a centering wrapper (no circle, no border, nothing visible) */
+/* Centering wrapper only (no border/background) */
 .section__pic-container{
   width: 100%;
   display: flex;
@@ -252,17 +252,17 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   margin: 18px 0 10px;
 }
 
-/* Your image is already a circle — we only size + center it */
+/* Force a true square so it can be a perfect circle on ALL screens */
 .profile-pic{
   width: 160px;
-  height: 160px;      /* ensures no oval scaling */
-  display: block;
-  object-fit: cover;  /* safe if the file isn’t perfectly square */
+  height: 160px;          /* key: stops pill/oval */
+  aspect-ratio: 1 / 1;    /* extra safety */
+  object-fit: cover;      /* safe even if source isn’t perfectly square */
   object-position: center;
-
-  /* Optional safety: uncomment ONLY if your file isn't truly circular */
-  /* border-radius: 999px; */
+  border-radius: 50%;     /* even if your file is “already circle”, this guarantees it */
+  display: block;
 }
+
 
 @media (max-width: 900px){
   .about-inner{ padding: 10px 16px 22px; }
