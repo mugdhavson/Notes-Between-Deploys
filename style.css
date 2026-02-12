@@ -222,6 +222,13 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   gap: 10px;
 }
 
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
 /* Mobile nav breakpoint (prevents overlap) */
 @media (max-width: 900px){
   .nav-toggle{ display: inline-flex; }
