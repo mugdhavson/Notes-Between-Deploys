@@ -125,8 +125,12 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 }
 
 /* Hamburger button */
+/* Hide the old spans if they still exist anywhere */
+.nav-toggle span{ display: none; }
+
 .nav-toggle{
-  display: none;               /* hidden on desktop */
+  display: none;
+  pointer-events: auto;
   width: 44px;
   height: 44px;
   border-radius: 999px;
@@ -136,16 +140,17 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   box-shadow: var(--shadow-soft);
   align-items: center;
   justify-content: center;
-  gap: 4px;
   cursor: pointer;
+  padding: 0;
 }
-.nav-toggle span{
+
+.nav-icon{
+  width: 22px;
+  height: 22px;
   display: block;
-  width: 18px;
-  height: 2px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 2px;
+  object-fit: contain;
 }
+
 
 /* Page layout */
 .page{
