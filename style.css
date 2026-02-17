@@ -522,5 +522,21 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   .brand:hover, .btn:hover{ transform: none !important; }
 }
 
+@media (max-width: 640px){
+  .panel-header{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
 
+  .panel-title{
+    padding: 14px 16px; /* slightly tighter on mobile */
+  }
+
+  .panel-subtitle{
+    margin-top: 0;
+    max-width: 40ch;
+  }
+}
 
