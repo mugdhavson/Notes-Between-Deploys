@@ -1,9 +1,9 @@
 name: Deploy static content to Pages. Changes in css and js versions to perform cache busting
 
-# workflow_dispatch acts like when: manual
+# workflow_dispatch acts like when: manual in gitlab
 on:
   push:
-    branches: ["prod"]
+    branches: ["dev"]
   workflow_dispatch:
 
 # controls what the workflow’s built-in GITHUB_TOKEN is allowed to do while the job runs.

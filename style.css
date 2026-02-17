@@ -227,6 +227,21 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   color: var(--muted);
   font-size: 14px;
 }
+
+/* Tighten spacing in About section */
+.panel.about .panel-title{
+  padding-bottom: 2px; /* was 20px */
+}
+
+.panel.about .about-inner{
+  padding-top: 3px;     /* was 10px */
+  gap: 4px;             /* was 12px */
+}
+
+.panel.about .section__pic-container{
+  margin: 4px 0 3px;    /* was 18px 0 10px */
+}
+
 .small-link{
   font-weight: 700;
   font-size: 14px;
@@ -253,26 +268,22 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 18px 0 10px;
+  margin: 8px 0 10px;
 }
 
 .profile-pic{
-  height: 180px;   /* pick the size you want */
-  width: auto;     /* IMPORTANT: preserve aspect ratio */
-  max-width: 50vw; /* prevents overflow on small screens */
+  width: clamp(200px, 28vw, 320px); /* bigger + responsive */
+  height: auto;                     /* let height follow width */
+  aspect-ratio: 1 / 1;              /* keeps it perfectly square */
+  object-fit: cover;                /* safe crop if the PNG isn’t perfectly square */
+  object-position: center;
   display: block;
-
-  /* remove these because your PNG is already circular */
-  border-radius: 0;
-  object-fit: initial;
+  border-radius: 50%;               /* guarantees circle even when resized */
 }
-
-
 
 @media (max-width: 900px){
   .about-inner{ padding: 10px 16px 22px; }
 }
-
 
 /* Mobile nav breakpoint */
 @media (max-width: 900px){
@@ -368,6 +379,20 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.button-stack{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn--email{
+  min-width: 220px;   /* makes it feel like a “main” button */
+  justify-content: center;
+}
+
 
 /* Buttons */
 .btn{
@@ -496,3 +521,6 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   *{ transition: none !important; scroll-behavior: auto !important; }
   .brand:hover, .btn:hover{ transform: none !important; }
 }
+
+
+
