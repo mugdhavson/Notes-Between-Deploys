@@ -1,6 +1,6 @@
 name: Deploy static content to Pages. Changes in css and js versions to perform cache busting
 
-# workflow_dispatch acts like when: manual in gitlab
+# workflow_dispatch acts like when: manual in gitlab workflow
 on:
   push:
     branches: ["dev"]
