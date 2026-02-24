@@ -362,7 +362,7 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 .role{
   margin: 0;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   color: rgba(11, 18, 32, 0.70);
 }
 .bio{
@@ -370,6 +370,10 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   max-width: 42ch;
   color: rgba(11, 18, 32, 0.78);
   line-height: 1.55;
+}
+
+.list {
+  text-align: left;
 }
 
 .button-row{
