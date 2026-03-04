@@ -544,3 +544,26 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
   }
 }
 
+.code-block {
+  position: relative;
+  background: #0b0f19;
+  border-radius: 12px;
+  padding: 28px 16px 16px;
+  overflow-x: auto;
+  color: #e6edf3;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  line-height: 1.5;
+}
+.code-block .lang {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.code-block code { white-space: pre; }
