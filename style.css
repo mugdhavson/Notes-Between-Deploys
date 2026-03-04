@@ -476,6 +476,20 @@ a:focus-visible, button:focus-visible{ outline: none; box-shadow: var(--focus); 
 .card-media--p5{ background: linear-gradient(135deg, rgba(76,201,240,0.30), rgba(255,122,24,0.35)); }
 .card-media--p6{ background: linear-gradient(135deg, rgba(34,211,238,0.26), rgba(59,130,246,0.22)); }
 
+.post-hero{
+  background-image: url("assets/notes-between-deploys-image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.post-hero-banner{
+  background-image: url("assets/notes-between-deploys-banner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .card-body{
   padding: 14px 14px 16px;
   display: grid;
