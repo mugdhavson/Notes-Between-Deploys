@@ -1,0 +1,67 @@
+<!-- projects.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Projects • Notes Between Deploys</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
+
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">All Projects</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page page--projects">
+    <section class="panel panel--wide" aria-labelledby="all-projects-title">
+      <div class="panel-header">
+        <h1 id="all-projects-title" class="panel-title">All Projects</h1>
+        <p class="panel-subtitle">Blog-style writeups, sorted from newest to oldest.</p>
+      </div>
+
+      <div class="card-grid card-grid--dense">
+        <!-- PROJECT CARD START -->
+        <article class="project-card">
+          <a class="card-media post-hero" href="project-notes-between-deploys.html" aria-label="Continue reading: Observability Notes: Tracing a Slow Query"></a>
+          <div class="card-body">
+            <h2 class="card-title">Notes Between Deploys: An archive of ideas I would otherwise forget</h2>
+            <p class="card-meta">2026-02-05</p>
+            <p class="card-excerpt clamp-3">
+              I write code, and then, inevitably, I forget why I wrote it that way. Six months later, I’ll look at a project and wonder who made such bizarre architectural choices…
+            </p>
+            <a class="btn btn--sm" href="project-notes-between-deploys.html">Continue Reading</a>
+          </div>
+        </article>
+        <!-- PROJECT CARD END -->
+
+       
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Mugdha Sonawane.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

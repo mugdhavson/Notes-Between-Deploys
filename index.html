@@ -1,0 +1,103 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes Between Deploys</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
+
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">All Projects</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page page--home">
+    <section class="panel about" aria-labelledby="about-title">
+      <h2 id="about-title" class="panel-title">About Me</h2>
+
+      <div class="about-inner">
+        <div class="section__pic-container">
+          <img class="profile-pic" src="./assets/profile-pic.png" alt="Profile picture">
+        </div>
+
+
+        <p class="kicker">Hello! I’m</p>
+        <h1 class="name">Mugdha</h1>
+
+        <p class="role">Software Engineer | Amateur Platform Designer </p>
+
+        <p class="bio">
+          I turn complex problems into clean code and well-architected systems.<br>
+          <br>
+          What you'll find here:<br>
+            <b>My software projects</b><br>
+            <b>How my projects escaped <code>localhost</code></b><br>
+            <b>Lessons learned along the way</b>
+        </p>
+
+        <div class="button-stack">
+          <div class="button-row">
+            <a class="btn btn--primary" href="https://github.com/mugdhavson" target="_blank" rel="noreferrer noopener">GitHub</a>
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/mugdhavsonawane/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          </div>
+
+          
+          <a class="btn btn--ghost btn--email" href="mailto:mugdhavsonawane@gmail.com?subject=Inquiry from Notes-Between-Deploys">
+            Email Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel projects" aria-labelledby="projects-title">
+      <div class="panel-header">
+        <h2 id="projects-title" class="panel-title">Highlighted Projects</h2>
+        <a class="small-link" href="projects.html">View all →</a>
+      </div>
+
+      <div class="card-grid">
+        <!-- PROJECT CARD START -->
+        <article class="project-card">
+          <a class="card-media post-hero" href="project-notes-between-deploys.html" aria-label="Continue reading: Observability Notes: Tracing a Slow Query"></a>
+          <div class="card-body">
+            <h3 class="card-title">Notes Between Deploys: An archive of ideas I would otherwise forget</h3>
+            <p class="card-meta">2026-02-05</p>
+            <p class="card-excerpt clamp-3">
+              I write code, and then, inevitably, I forget why I wrote it that way. Six months later, I’ll look at a project and wonder who made such bizarre architectural choices,…
+            </p>
+            <a class="btn btn--sm" href="project-notes-between-deploys.html">Continue Reading</a>
+          </div>
+        </article>
+        <!-- PROJECT CARD END -->
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Mugdha Sonawane. Built with HTML/CSS/JS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

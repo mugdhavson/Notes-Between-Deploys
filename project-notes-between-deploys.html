@@ -1,0 +1,113 @@
+<!-- project-notes-between-deploy.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Title • Notes Between Deploys</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Notes Between Deploys home">Notes Between Deploys</a>
+
+    <button class="nav-toggle" type="button"
+      aria-label="Open menu"
+      aria-controls="primary-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="primary-nav" class="top-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">All Projects</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page page--post">
+    <article class="panel panel--wide post">
+      <header class="post-header">
+        <h1 class="post-title">Notes Between Deploys: An archive of ideas I would otherwise forget</h1>
+        <p class="post-meta">Published <time datetime="2026-02-05">2026-02-05</time></p>
+        <div class="post-hero-banner card-media" role="img" aria-label="Project hero image"></div>
+      </header>
+
+      <div class="post-content">
+        <p class="lead">
+          I write code, and then, inevitably, I forget why I wrote it that way. Six months later, I’ll look at a project and wonder who made such bizarre architectural choices, only to realize that person was me. Welcome to <b>Notes Between Deploys</b>, my attempt to fix that.
+        </p>
+
+        <h2>What I built</h2>
+        <p>
+          I built a minimalist website to document my projects. The goal is simply to have a permanent record of the design decisions, the tech stack choices, and the trade-offs I made along the way. It’s essentially an external hard drive for my working memory. <br><br>It's built for me, but if you happen to find my notes useful (or mildly entertaining), that's a nice bonus. The main outcome is that this site is now live and ready to hold my thoughts before they vanish.
+        </p>
+
+        <h2>Highlights</h2>
+        <ul>
+          <li>Key learning #1: <b>Code doesn't explain the "why."</b> A Git commit tells me what files changed, but it doesn't capture the three hours I spent researching databases before settling on one. I realized I needed a dedicated space for the context behind the code.</li>
+          <br>
+          <li>Key learning #2: <b>Friction is the enemy of documentation.</b> If the process of writing a post is complicated, like dealing with a clunky CMS or configuring a build pipeline, I simply won't do it. I decided to write everything in raw HTML. No Markdown parsers, no complex editors. Just me, a few &lt;p> tags, and my notes.</li>
+          <br>
+          <li>Key learning #3: <b>Shipping is better than tweaking.</b> The hardest part of building is knowing when the product is finished. I had to draw a line in the sand and just get the core structure, without the blogs for my existing projects, deployed.</li>
+        </ul>
+
+        <h2>Architecture Approach</h2>
+        <p>
+          I kept the architecture deliberately boring. It’s a purely static site—no heavy backend, no database to maintain, just plain HTML files served straight to the browser.
+          <br>
+          <br>
+          The main tradeoff is that the site is incredibly bare-bones. There’s no magic happening under the hood. If I want a search feature or a tagging system later, I’ll have to build it myself. If I were to start over, I might look into a framework that gives me a few more features out of the box, but for version 1.0, keeping it this simple was the right call.
+        </p>
+
+        <pre class="code-block"><span class="lang">HTML</span><code>&lt;div class=&quot;memory-retrieval&quot;&gt;
+  &lt;p&gt;Error 404: Reasoning for this framework not found. Please consult the archive.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <h3>The Branching Strategy</h3>
+        <p>
+          You might think a website consisting entirely of plain text wouldn't need a formalized Git branching strategy. You would be wrong. I implemented a three-branch system, namely <b><code>dev</code></b>, <b><code>main</code></b>, and <b><code>prod</code></b>, mostly to keep it as close to the industry standard as possible.
+          <br>
+          <ul>
+            <li>The <b><code>dev</code></b> branch: This is the drafting room. It’s where new notes and features are merged and validated before they see the light of day.</li>
+            <br>
+            <li>The <b><code>main</code></b> branch: This is the vault. It is the absolute, production-ready source of truth. I keep main pristine so that if the files ever get hopelessly corrupted in dev or prod, I can just clone main, redeploy, and pretend the outage never happened.</li>
+            <br>
+            <li>The <b><code>prod</code></b> branch: This holds the code currently running live on the internet. If you are reading this, you are looking at the prod branch.</li>
+          </ul>
+
+          You might notice a glaring omission: <i>Where is the staging branch?</i>
+          <br>
+          <br>
+          There isn't one. The reality is, I am just publishing text. I don't have complex user authentication, fragile APIs, or special features to test. Thorough testing and multiple deployment iterations to hunt down faults are completely unnecessary here. If I make a typo in a paragraph, I hope I don't get judged too harshly.
+        </p>
+
+        <h2>Results</h2>
+        <p>
+          Performance is excellent, mostly because serving plain HTML text is about as fast as the internet gets. Reliability is currently 100%. But the real impact is personal: I can now safely flush the intricate details of past projects out of my brain, knowing they are safely archived right here.
+        </p>
+
+        <hr class="post-divider" />
+
+        <div class="post-cta">
+          <a class="btn btn--primary" href="projects.html">Back to All Projects</a>
+          <a class="btn btn--ghost" href="https://github.com/mugdhavson/Notes-Between-Deploys" target="_blank" rel="noreferrer noopener">View on GitHub</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Mugdha Sonawane.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
