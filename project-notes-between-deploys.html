@@ -58,7 +58,7 @@
           <li>Key learning #3: <b>Shipping is better than tweaking.</b> The hardest part of building is knowing when the product is finished. I had to draw a line in the sand and just get the core structure, without the blogs for my existing projects, deployed.</li>
         </ul>
 
-        <h2>Architecture / Approach</h2>
+        <h2>Architecture Approach</h2>
         <p>
           I kept the architecture deliberately boring. It’s a purely static site—no heavy backend, no database to maintain, just plain HTML files served straight to the browser.
           <br>
@@ -70,6 +70,24 @@
   &lt;p&gt;Error 404: Reasoning for this framework not found. Please consult the archive.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
+
+        <h3>The Branching Strategy</h3>
+        <p>
+          You might think a website consisting entirely of plain text wouldn't need a formalized Git branching strategy. You would be wrong. I implemented a three-branch system, namely <b><code>dev</code></b>, <b><code>main</code></b>, and <b><code>prod</code></b>, mostly to keep it as close to the industry standard as possible.
+          <br>
+          <ul>
+            <li>The <b><code>dev</code></b> branch: This is the drafting room. It’s where new notes and features are merged and validated before they see the light of day.</li>
+            <br>
+            <li>The <b><code>main</code></b> branch: This is the vault. It is the absolute, production-ready source of truth. I keep main pristine so that if the files ever get hopelessly corrupted in dev or prod, I can just clone main, redeploy, and pretend the outage never happened.</li>
+            <br>
+            <li>The <b><code>prod</code></b> branch: This holds the code currently running live on the internet. If you are reading this, you are looking at the prod branch.</li>
+          </ul>
+
+          You might notice a glaring omission: <i>Where is the staging branch?</i>
+          <br>
+          <br>
+          There isn't one. The reality is, I am just publishing text. I don't have complex user authentication, fragile APIs, or special features to test. Thorough testing and multiple deployment iterations to hunt down faults are completely unnecessary here. If I make a typo in a paragraph, I hope I don't get judged too harshly.
+        </p>
 
         <h2>Results</h2>
         <p>
