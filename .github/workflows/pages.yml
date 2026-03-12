@@ -3,7 +3,7 @@ name: Deploy static content to Pages. Changes in css and js versions to perform 
 # workflow_dispatch acts like when: manual in gitlab workflow
 on:
   push:
-    branches: ["dev"]
+    branches: ["prod"]
   workflow_dispatch:
 
 # controls what the workflow’s built-in GITHUB_TOKEN is allowed to do while the job runs.
@@ -22,7 +22,7 @@ concurrency:
 jobs:
   deploy:
     environment:
-      name: dev
+      name: prod
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, 'deploy')
